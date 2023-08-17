@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="EMSDB">
+  <DataContextMoniker Name="/EMSDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7d604058-57a1-4532-8f78-db66594f5983" absoluteBounds="1, 1.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/EMSDBDataContext/TCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="024f7b66-eda8-4dc6-b618-2f98ea6c6067" absoluteBounds="1.0150000000000001, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c9345bef-efd1-4300-a134-0064e2c088c7" absoluteBounds="0.5, 3.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/EMSDBDataContext/TCourse" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9983ebf2-9f25-4333-ad65-3d3fd5b2cccb" absoluteBounds="0.515, 3.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 2.44399251302083); (1.75 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EMSDBDataContext/TCategory/TCategory_TCourse" />
+      <nodes>
+        <classShapeMoniker Id="7d604058-57a1-4532-8f78-db66594f5983" />
+        <classShapeMoniker Id="c9345bef-efd1-4300-a134-0064e2c088c7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f35fc02d-d309-4078-9a80-ba3f72f42ea2" absoluteBounds="4, 4, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/EMSDBDataContext/TStudent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a218fdd4-64e1-42b0-aabb-e3be071750e5" absoluteBounds="4.015, 4.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 4.44794840494792); (4 : 4.44794840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EMSDBDataContext/TCourse/TCourse_TStudent" />
+      <nodes>
+        <classShapeMoniker Id="c9345bef-efd1-4300-a134-0064e2c088c7" />
+        <classShapeMoniker Id="f35fc02d-d309-4078-9a80-ba3f72f42ea2" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

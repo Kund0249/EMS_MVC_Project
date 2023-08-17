@@ -1,0 +1,15 @@
+﻿@model EMS_MVC_Project.Models.CategoryModel
+@*@{
+    Layout = "~/Views/Shared/_EMSLayout.cshtml";
+}*@
+
+
+    <form method="post">
+        <div>
+            @*Name : <input type="Text" name="CategoryName" />*@
+            Name : @Html.TextBoxFor(x => x.CategoryName)
+            <br />
+            <input type="submit" value="Save" />
+        </div>
+    </form>
+

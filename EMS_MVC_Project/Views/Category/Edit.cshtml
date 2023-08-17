@@ -1,0 +1,16 @@
+﻿@model EMS_MVC_Project.Models.CategoryModel
+@{
+    Layout = null;
+}
+
+
+    <form method="post">
+        <div>
+            @*Name : <input type="Text" name="CategoryName" />*@
+            @Html.HiddenFor(x => x.CategoryId)
+            Name : @Html.TextBoxFor(x => x.CategoryName)
+            <br />
+            <input type="submit" value="Save" />
+        </div>
+    </form>
+

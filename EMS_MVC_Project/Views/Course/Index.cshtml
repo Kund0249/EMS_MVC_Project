@@ -1,0 +1,27 @@
+﻿@model EMS_MVC_Project.Models.CourseViewModelWrapper
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@if (Model.courses.Count() > 0)
+{
+    @Html.Partial("_CoursePartialView", Model.courses)
+}
+else
+{
+    <p style="color:red">There is no course to display</p>
+}
+
+<br />
+<hr />
+@if (Model.Categories.Count() > 0)
+{
+    @Html.Partial("_CategoryPartialView", Model.Categories)
+}
+else
+{
+    <p style="color:red">There is no Category to display</p>
+}

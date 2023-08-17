@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "jquery-validation@1.19.5",
+      "destination": "Scripts/",
+      "files": [
+        "dist/jquery.validate.js",
+        "dist/jquery.validate.min.js"
+      ]
+    }
+  ]
+}

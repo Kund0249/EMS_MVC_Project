@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuickXpert" Class="EMSDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=QuickXpert;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QuickXpertConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TCategory" Member="TCategories">
+    <Type Name="TCategory">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TCategory_TCourse" Member="TCourses" ThisKey="CategoryId" OtherKey="CourseCategoryId" Type="TCourse" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCourse" Member="TCourses">
+    <Type Name="TCourse">
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CourseDuration" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseFee" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseCategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TCourse_TStudent" Member="TStudents" ThisKey="CourseId" OtherKey="CourseId" Type="TStudent" />
+      <Association Name="TCategory_TCourse" Member="TCategory" ThisKey="CourseCategoryId" OtherKey="CategoryId" Type="TCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TStudent" Member="TStudents">
+    <Type Name="TStudent">
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ContactNumber" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EmailAddress" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EnrollementDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TCourse_TStudent" Member="TCourse" ThisKey="CourseId" OtherKey="CourseId" Type="TCourse" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

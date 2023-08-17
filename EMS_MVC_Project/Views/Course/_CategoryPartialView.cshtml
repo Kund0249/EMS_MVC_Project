@@ -1,0 +1,59 @@
+﻿@model IEnumerable<EMS_MVC_Project.Models.CategoryModel>
+
+<div class="row">
+    <div class="col-md-6">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.CategoryId
+                        </td>
+                        <td>
+                            @item.CategoryName
+                        </td>
+                        <td>
+
+                            <!--<form method="post" action="/Category/Delete">
+                            <span>-->
+                            @*<a href="/Category/Edit/@item.CategoryId"
+                                class="btn btn-primary">Edit</a>*@
+                            <!--@Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }, new { @class = "btn btn-primary" })
+                            </span>
+
+                            <span>-->
+                            @*@Html.ActionLink("Remove", "Delete", new { id = item.CategoryId }, new { @class = "btn btn-danger" })*@
+
+                            <!--<input type="hidden" value="@item.CategoryId" name="id"/>
+                                    <input type="submit" value="Remove" class="btn btn-danger" />
+                                </span>
+
+                            </form>-->
+
+                            @using (Html.BeginForm("Delete", "Category", new { id = item.CategoryId }, FormMethod.Post))
+                            {
+                                <span>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }, new { @class = "btn btn-primary" })
+                                    <input type="submit" value="Remove" class="btn btn-danger"
+                                           onclick="return confirm('Are you sure? This recored will be permanently removed from the system')" />
+                                </span>
+
+                            }
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
